@@ -792,6 +792,10 @@ input, textarea {
         flex-wrap: wrap;
         justify-content: center;
     }
+    
+    .mandalart-container {
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 768px) {

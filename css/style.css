@@ -785,3 +785,94 @@ input, textarea {
     color: #555;
     flex: 1;
 }
+
+/* Responsive Web Design (Media Queries) */
+@media (max-width: 1024px) {
+    .recommendation-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+    }
+
+    /* Make sidebar an off-canvas menu, hidden by default on mobile */
+    .sidebar {
+        position: absolute;
+        height: 100%;
+        margin-left: -290px; /* Hidden by default */
+        z-index: 100;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Move toggle outside when hidden */
+    .sidebar .sidebar-toggle {
+        right: -50px;
+        background: #fff;
+    }
+
+    /* Show sidebar when toggled (JS adds .collapsed) */
+    .sidebar.collapsed {
+        margin-left: 0;
+    }
+
+    /* Move toggle inside when visible */
+    .sidebar.collapsed .sidebar-toggle {
+        right: 20px;
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    .main-title {
+        font-size: 24px;
+    }
+    
+    .sub-title {
+        font-size: 18px;
+    }
+    
+    .category-section {
+        padding: 20px;
+    }
+
+    /* Make search box padding smaller */
+    .search-box input {
+        padding: 12px 12px 12px 40px;
+        font-size: 14px;
+    }
+
+    /* Settings form */
+    .form-inline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* Blacklist view */
+    .bl-row {
+        flex-direction: column;
+    }
+    
+    .bl-label {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 10px 0;
+    }
+
+    /* Situation view */
+    .situation-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .situation-list strong {
+        margin-bottom: 5px;
+    }
+    
+    .situation-card {
+        padding: 20px;
+    }
+}

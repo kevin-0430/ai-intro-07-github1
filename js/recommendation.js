@@ -113,6 +113,15 @@ export const getRecommendations = (selectedCategory = null) => {
         return true;
     });
 
+    // Extract traits of recent meal
+    let recentTraits = [];
+    if (recentMeal) {
+        const recentMenuItem = menus.find(m => m.name.includes(recentMeal.trim()) || recentMeal.trim().includes(m.name));
+        if (recentMenuItem && recentMenuItem.traits) {
+            recentTraits = recentMenuItem.traits.filter(t => t !== '해당 X');
+        }
+    }
+
     // 2. Weighting phase (History)
     // Reduce probability based on how recent it was eaten (in past 7 days)
     const today = new Date();
@@ -138,7 +147,16 @@ export const getRecommendations = (selectedCategory = null) => {
             }
         }
 
-        return { ...menu, weight: Math.max(1, weight) }; // minimum weight 1
+        // Smart trait continuous avoidance penalty
+        if (recentTraits.length > 0 && menu.traits) {
+            const sharedTraits = menu.traits.filter(t => recentTraits.includes(t));
+            if (sharedTraits.length > 0) {
+                // Reduces weight to 10% for items sharing traits with the recent meal
+                weight = weight * 0.1;
+            }
+        }
+
+        return { ...menu, weight: Math.max(1, Math.round(weight)) }; // minimum weight 1
     });
 
     // 3. Selection

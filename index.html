@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 음식 추천</title>
+    <title>메뉴 모아</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="app-container">
         <!-- Sidebar Navigation -->
@@ -31,7 +33,7 @@
 
         <!-- Main Content Area -->
         <main class="content">
-            
+
             <!-- VIEW: HOME -->
             <section id="view-home" class="view active">
                 <h1 class="main-title">최근에 먹은 음식은?</h1>
@@ -85,12 +87,12 @@
             <!-- VIEW: ALLERGIES -->
             <section id="view-allergies" class="view">
                 <h2 class="view-title">못 먹는 음식 설정</h2>
-                
+
                 <div class="setting-group">
                     <label>🚫 알레르기</label>
                     <input type="text" id="allergy-input" placeholder="알레르기를 입력해주세요">
                     <div class="tags-container" id="allergy-tags"></div>
-                    
+
                     <p class="tag-hint">[많이 찾는 알레르기]</p>
                     <div class="popular-tags">
                         <span class="tag-btn" data-type="allergy">견과류</span>
@@ -103,7 +105,7 @@
                     <label>🚫 불호 식재료</label>
                     <input type="text" id="dislike-input" placeholder="불호 식재료를 입력해주세요">
                     <div class="tags-container" id="dislike-tags"></div>
-                    
+
                     <p class="tag-hint">[많이 찾는 불호 식재료]</p>
                     <div class="popular-tags">
                         <span class="tag-btn" data-type="dislike">고수</span>
@@ -117,7 +119,7 @@
             <!-- VIEW: HEALTH -->
             <section id="view-health" class="view">
                 <h2 class="view-title">🩺 건강 관리 설정</h2>
-                
+
                 <div class="setting-group">
                     <label>건강 목적 설정</label>
                     <div class="radio-group" id="goal-group">
@@ -162,13 +164,17 @@
                         <!-- Calendar injected via JS -->
                     </div>
                     <div class="calendar-legend">
-                        <span class="legend-item"><span class="dot-legend" style="background-color: #E2605E;"></span> 한식</span>
-                        <span class="legend-item"><span class="dot-legend" style="background-color: #E8B44A;"></span> 중식</span>
-                        <span class="legend-item"><span class="dot-legend" style="background-color: #5B89C6;"></span> 일식</span>
-                        <span class="legend-item"><span class="dot-legend" style="background-color: #9360BD;"></span> 양식</span>
+                        <span class="legend-item"><span class="dot-legend" style="background-color: #E2605E;"></span>
+                            한식</span>
+                        <span class="legend-item"><span class="dot-legend" style="background-color: #E8B44A;"></span>
+                            중식</span>
+                        <span class="legend-item"><span class="dot-legend" style="background-color: #5B89C6;"></span>
+                            일식</span>
+                        <span class="legend-item"><span class="dot-legend" style="background-color: #9360BD;"></span>
+                            양식</span>
                     </div>
                 </div>
-                
+
                 <div class="history-detail" id="history-detail" style="display:none;">
                     <h3 id="history-date-title">선택한 날짜</h3>
                     <div class="history-cards" id="history-cards-container">
@@ -180,7 +186,7 @@
             <!-- VIEW: BLACKLIST -->
             <section id="view-blacklist" class="view">
                 <h2 class="view-title">블랙 리스트 관리</h2>
-                
+
                 <div class="blacklist-container">
                     <div class="bl-row" style="background-color: #E2605E;">
                         <div class="bl-label">한식</div>
@@ -215,92 +221,132 @@
             <section id="view-situation" class="view">
                 <h2 class="view-title">상황 별 추천 메뉴</h2>
                 <div class="situation-container">
-                    
+
                     <div class="situation-card">
                         <h3>날씨에 어울리는 메뉴</h3>
                         <ul class="situation-list">
-                            <li><span class="icon">☔</span> <strong>비올 때</strong> <span>감자전, 빈대떡, 해물파전, 김치전, 파전, 수제비, 뼈해장국, 부대찌개, 짬뽕, 칼국수, 육개장</span></li>
-                            <li><span class="icon">❄️</span> <strong>겨울·추울 때</strong> <span>부대찌개, 갈비탕, 감자탕, 곰탕, 만둣국, 삼계탕, 오뎅탕, 설렁탕, 순댓국, 떡국, 샤브샤브</span></li>
-                            <li><span class="icon">☀️</span> <strong>더울 때</strong> <span>팥빙수, 물냉면, 비빔냉면, 물회, 비빔국수, 쌀국수, 냉면, 콩국수, 냉파스타, 냉모밀</span></li>
-                            <li><span class="icon">😷</span> <strong>미세먼지 심할 때</strong> <span>삼겹살, 콩나물국, 돼지갈비구이, 미나리, 도라지무침, 미역국, 브로콜리, 미나리무침 곁들인 고기</span></li>
-                            <li><span class="icon">🌬️</span> <strong>바람 불 때</strong> <span>우육면, 김치찌개, 우동, 추어탕, 닭강정, 어묵탕, 육개장, 감자탕, 순두부찌개, 해물탕</span></li>
-                            <li><span class="icon">☁️</span> <strong>쌀쌀할 때</strong> <span>갈비탕, 된장찌개, 볶음밥, 보쌈, 순두부찌개, 찜닭, 김치찌개, 오므라이스, 곱창전골</span></li>
+                            <li><span class="icon">☔</span> <strong>비올 때</strong> <span>감자전, 빈대떡, 해물파전, 김치전, 파전, 수제비,
+                                    뼈해장국, 부대찌개, 짬뽕, 칼국수, 육개장</span></li>
+                            <li><span class="icon">❄️</span> <strong>겨울·추울 때</strong> <span>부대찌개, 갈비탕, 감자탕, 곰탕, 만둣국,
+                                    삼계탕, 오뎅탕, 설렁탕, 순댓국, 떡국, 샤브샤브</span></li>
+                            <li><span class="icon">☀️</span> <strong>더울 때</strong> <span>팥빙수, 물냉면, 비빔냉면, 물회, 비빔국수, 쌀국수,
+                                    냉면, 콩국수, 냉파스타, 냉모밀</span></li>
+                            <li><span class="icon">😷</span> <strong>미세먼지 심할 때</strong> <span>삼겹살, 콩나물국, 돼지갈비구이, 미나리,
+                                    도라지무침, 미역국, 브로콜리, 미나리무침 곁들인 고기</span></li>
+                            <li><span class="icon">🌬️</span> <strong>바람 불 때</strong> <span>우육면, 김치찌개, 우동, 추어탕, 닭강정,
+                                    어묵탕, 육개장, 감자탕, 순두부찌개, 해물탕</span></li>
+                            <li><span class="icon">☁️</span> <strong>쌀쌀할 때</strong> <span>갈비탕, 된장찌개, 볶음밥, 보쌈, 순두부찌개, 찜닭,
+                                    김치찌개, 오므라이스, 곱창전골</span></li>
                         </ul>
                     </div>
 
                     <div class="situation-card">
                         <h3>직장인 회식 메뉴 추천</h3>
                         <ul class="situation-list">
-                            <li><span class="bullet">·</span> <strong>구이류</strong> <span>목살, 한우구이, 삼겹살, 항정살, 갈비, 오리고기</span></li>
-                            <li><span class="bullet">·</span> <strong>전골·찌개</strong> <span>부대찌개, 곱창전골, 된장찌개, 김치찌개, 감자탕</span></li>
-                            <li><span class="bullet">·</span> <strong>곱창·막창</strong> <span>곱창전골, 염통, 막창구이, 대창, 소곱창</span></li>
-                            <li><span class="bullet">·</span> <strong>해산물</strong> <span>가리비찜, 조개구이, 모둠사시미, 모둠물회, 킹크랩, 회, 대게, 해물찜</span></li>
-                            <li><span class="bullet">·</span> <strong>코스요리</strong> <span>중식코스, 양꼬치, 뷔페, 일식 오마카세, 스테이크 코스, 한정식</span></li>
+                            <li><span class="bullet">·</span> <strong>구이류</strong> <span>목살, 한우구이, 삼겹살, 항정살, 갈비,
+                                    오리고기</span></li>
+                            <li><span class="bullet">·</span> <strong>전골·찌개</strong> <span>부대찌개, 곱창전골, 된장찌개, 김치찌개,
+                                    감자탕</span></li>
+                            <li><span class="bullet">·</span> <strong>곱창·막창</strong> <span>곱창전골, 염통, 막창구이, 대창,
+                                    소곱창</span></li>
+                            <li><span class="bullet">·</span> <strong>해산물</strong> <span>가리비찜, 조개구이, 모둠사시미, 모둠물회, 킹크랩,
+                                    회, 대게, 해물찜</span></li>
+                            <li><span class="bullet">·</span> <strong>코스요리</strong> <span>중식코스, 양꼬치, 뷔페, 일식 오마카세, 스테이크
+                                    코스, 한정식</span></li>
                         </ul>
                     </div>
 
                     <div class="situation-card">
                         <h3>친구들과의 모임 배달 메뉴</h3>
                         <ul class="situation-list">
-                            <li><span class="bullet">·</span> <strong>치킨·튀김</strong> <span>간장치킨, 후라이드, 치킨너겟, 감자튀김, 치킨윙, 양념치킨</span></li>
-                            <li><span class="bullet">·</span> <strong>피자·햄버거</strong> <span>치즈스틱, 불고기피자, 페퍼로니, 핫윙, 콤비네이션 피자, 햄버거 세트, 하와이안피자</span></li>
-                            <li><span class="bullet">·</span> <strong>중식</strong> <span>짜장면, 군만두, 칠리새우, 탕수육, 짬뽕, 꿔바로우</span></li>
-                            <li><span class="bullet">·</span> <strong>분식</strong> <span>튀김, 라볶이, 김밥, 모둠튀김, 떡볶이, 순대볶음, 순대</span></li>
-                            <li><span class="bullet">·</span> <strong>야식</strong> <span>보쌈, 순대볶음, 닭발, 매운족발, 족발, 곱창</span></li>
+                            <li><span class="bullet">·</span> <strong>치킨·튀김</strong> <span>간장치킨, 후라이드, 치킨너겟, 감자튀김, 치킨윙,
+                                    양념치킨</span></li>
+                            <li><span class="bullet">·</span> <strong>피자·햄버거</strong> <span>치즈스틱, 불고기피자, 페퍼로니, 핫윙, 콤비네이션
+                                    피자, 햄버거 세트, 하와이안피자</span></li>
+                            <li><span class="bullet">·</span> <strong>중식</strong> <span>짜장면, 군만두, 칠리새우, 탕수육, 짬뽕,
+                                    꿔바로우</span></li>
+                            <li><span class="bullet">·</span> <strong>분식</strong> <span>튀김, 라볶이, 김밥, 모둠튀김, 떡볶이, 순대볶음,
+                                    순대</span></li>
+                            <li><span class="bullet">·</span> <strong>야식</strong> <span>보쌈, 순대볶음, 닭발, 매운족발, 족발,
+                                    곱창</span></li>
                         </ul>
                     </div>
 
                     <div class="situation-card">
                         <h3>건강한 메뉴 추천</h3>
                         <ul class="situation-list">
-                            <li><span class="bullet">·</span> <strong>샐러드</strong> <span>샐러드 보울, 치킨 샐러드, 연어 아보카도 샐러드, 그릭 샐러드, 리코타치즈 샐러드, 퀴노아 샐러드, 포케</span></li>
-                            <li><span class="bullet">·</span> <strong>한식</strong> <span>두부 야채찜, 야채비빔밥, 나물무침, 산채비빔밥, 두부조림, 연어덮밥, 곤드레밥</span></li>
-                            <li><span class="bullet">·</span> <strong>저칼로리</strong> <span>샤브샤브, 맑은 생선 매운탕, 해물찜, 회덮밥, 해조류 샐러드, 메밀소바, 쌀국수</span></li>
-                            <li><span class="bullet">·</span> <strong>단백질</strong> <span>안심 스테이크, 닭안심 구이, 수육, 구운 연어, 두부 스테이크, 달걀찜, 유부초밥, 닭가슴살 스테이크</span></li>
-                            <li><span class="bullet">·</span> <strong>스프 및 국물</strong> <span>호박죽, 두부 스프, 미소된장국, 조개탕, 맑은 곰탕, 토마토 스프, 콩나물국, 북엇국</span></li>
+                            <li><span class="bullet">·</span> <strong>샐러드</strong> <span>샐러드 보울, 치킨 샐러드, 연어 아보카도 샐러드, 그릭
+                                    샐러드, 리코타치즈 샐러드, 퀴노아 샐러드, 포케</span></li>
+                            <li><span class="bullet">·</span> <strong>한식</strong> <span>두부 야채찜, 야채비빔밥, 나물무침, 산채비빔밥,
+                                    두부조림, 연어덮밥, 곤드레밥</span></li>
+                            <li><span class="bullet">·</span> <strong>저칼로리</strong> <span>샤브샤브, 맑은 생선 매운탕, 해물찜, 회덮밥, 해조류
+                                    샐러드, 메밀소바, 쌀국수</span></li>
+                            <li><span class="bullet">·</span> <strong>단백질</strong> <span>안심 스테이크, 닭안심 구이, 수육, 구운 연어, 두부
+                                    스테이크, 달걀찜, 유부초밥, 닭가슴살 스테이크</span></li>
+                            <li><span class="bullet">·</span> <strong>스프 및 국물</strong> <span>호박죽, 두부 스프, 미소된장국, 조개탕, 맑은
+                                    곰탕, 토마토 스프, 콩나물국, 북엇국</span></li>
                         </ul>
                     </div>
 
                     <div class="situation-card">
                         <h3>바쁜 일상 속 간단한 메뉴 추천</h3>
                         <ul class="situation-list">
-                            <li><span class="bullet">·</span> <strong>도시락</strong> <span>컵밥, 한솥도시락, 김밥, 불고기 도시락, 삼각김밥, 함박스테이크 도시락, 주먹밥, 제육볶음 도시락</span></li>
-                            <li><span class="bullet">·</span> <strong>면류</strong> <span>우동, 비빔국수, 라면, 잔치국수, 짜장면, 메밀소바, 쌀국수, 야키소바</span></li>
-                            <li><span class="bullet">·</span> <strong>샌드위치</strong> <span>크로와상, 클럽 샌드위치, 에그 샌드위치, 잠봉뵈르, 핫도그, 햄치즈 샌드위치, BLT 샌드위치</span></li>
-                            <li><span class="bullet">·</span> <strong>간편식</strong> <span>주먹밥, 오므라이스, 즉석떡볶이, 참치마요 덮밥, 컵라면, 볶음밥, 즉석카레</span></li>
-                            <li><span class="bullet">·</span> <strong>간식</strong> <span>만두, 군고구마, 핫도그, 붕어빵, 토스트, 떡꼬치, 호떡</span></li>
+                            <li><span class="bullet">·</span> <strong>도시락</strong> <span>컵밥, 한솥도시락, 김밥, 불고기 도시락, 삼각김밥,
+                                    함박스테이크 도시락, 주먹밥, 제육볶음 도시락</span></li>
+                            <li><span class="bullet">·</span> <strong>면류</strong> <span>우동, 비빔국수, 라면, 잔치국수, 짜장면, 메밀소바,
+                                    쌀국수, 야키소바</span></li>
+                            <li><span class="bullet">·</span> <strong>샌드위치</strong> <span>크로와상, 클럽 샌드위치, 에그 샌드위치, 잠봉뵈르,
+                                    핫도그, 햄치즈 샌드위치, BLT 샌드위치</span></li>
+                            <li><span class="bullet">·</span> <strong>간편식</strong> <span>주먹밥, 오므라이스, 즉석떡볶이, 참치마요 덮밥,
+                                    컵라면, 볶음밥, 즉석카레</span></li>
+                            <li><span class="bullet">·</span> <strong>간식</strong> <span>만두, 군고구마, 핫도그, 붕어빵, 토스트, 떡꼬치,
+                                    호떡</span></li>
                         </ul>
                     </div>
 
                     <div class="situation-card">
                         <h3>기념일, 특별한 날의 메뉴 추천</h3>
                         <ul class="situation-list">
-                            <li><span class="bullet">·</span> <strong>한식</strong> <span>전복죽, 잡채, 갈비찜, 생선구이, 불고기, 육회</span></li>
-                            <li><span class="bullet">·</span> <strong>양식</strong> <span>바베큐 립, 오믈렛, 빠에야, 뇨끼, 티본 스테이크, 랍스터 테일, 안심 스테이크, 라자냐</span></li>
-                            <li><span class="bullet">·</span> <strong>중식</strong> <span>동파육, 고추잡채, 베이징 덕, 새우 딤섬, 팔보채, 깐쇼새우, 크림새우</span></li>
-                            <li><span class="bullet">·</span> <strong>일식</strong> <span>카이센동, 와규 스테이크, 사시미 플래터, 샤브샤브, 야끼니꾸, 덴푸라, 스시 오마카세</span></li>
+                            <li><span class="bullet">·</span> <strong>한식</strong> <span>전복죽, 잡채, 갈비찜, 생선구이, 불고기,
+                                    육회</span></li>
+                            <li><span class="bullet">·</span> <strong>양식</strong> <span>바베큐 립, 오믈렛, 빠에야, 뇨끼, 티본 스테이크,
+                                    랍스터 테일, 안심 스테이크, 라자냐</span></li>
+                            <li><span class="bullet">·</span> <strong>중식</strong> <span>동파육, 고추잡채, 베이징 덕, 새우 딤섬, 팔보채,
+                                    깐쇼새우, 크림새우</span></li>
+                            <li><span class="bullet">·</span> <strong>일식</strong> <span>카이센동, 와규 스테이크, 사시미 플래터, 샤브샤브,
+                                    야끼니꾸, 덴푸라, 스시 오마카세</span></li>
                         </ul>
                     </div>
 
                     <div class="situation-card">
                         <h3>혼밥 메뉴 추천, 혼자 먹기 좋은 음식</h3>
                         <ul class="situation-list">
-                            <li><span class="bullet">·</span> <strong>덮밥류</strong> <span>오므라이스, 가츠동, 제육덮밥, 치킨마요덮밥, 규동, 육회비빔밥, 돈까스덮밥, 연어덮밥</span></li>
-                            <li><span class="bullet">·</span> <strong>국물요리</strong> <span>곰탕, 우동, 부대찌개, 설렁탕, 순대국, 김치찌개, 냉면</span></li>
-                            <li><span class="bullet">·</span> <strong>면요리</strong> <span>파스타, 라멘, 짬뽕, 쌀국수, 탄탄면, 짜장면, 물냉면</span></li>
-                            <li><span class="bullet">·</span> <strong>간편식</strong> <span>김밥, 주먹밥, 도시락, 마라탕, 컵밥, 햄버거, 김치볶음밥</span></li>
-                            <li><span class="bullet">·</span> <strong>치킨류</strong> <span>순살치킨, 닭날개 구이, 치킨텐더, 닭강정, 닭안심 튀김, 치킨윙, 가라아게덮밥</span></li>
+                            <li><span class="bullet">·</span> <strong>덮밥류</strong> <span>오므라이스, 가츠동, 제육덮밥, 치킨마요덮밥, 규동,
+                                    육회비빔밥, 돈까스덮밥, 연어덮밥</span></li>
+                            <li><span class="bullet">·</span> <strong>국물요리</strong> <span>곰탕, 우동, 부대찌개, 설렁탕, 순대국, 김치찌개,
+                                    냉면</span></li>
+                            <li><span class="bullet">·</span> <strong>면요리</strong> <span>파스타, 라멘, 짬뽕, 쌀국수, 탄탄면, 짜장면,
+                                    물냉면</span></li>
+                            <li><span class="bullet">·</span> <strong>간편식</strong> <span>김밥, 주먹밥, 도시락, 마라탕, 컵밥, 햄버거,
+                                    김치볶음밥</span></li>
+                            <li><span class="bullet">·</span> <strong>치킨류</strong> <span>순살치킨, 닭날개 구이, 치킨텐더, 닭강정, 닭안심
+                                    튀김, 치킨윙, 가라아게덮밥</span></li>
                         </ul>
                     </div>
 
                     <div class="situation-card">
                         <h3>다이어트 식단 메뉴</h3>
                         <ul class="situation-list">
-                            <li><span class="bullet">·</span> <strong>샐러드</strong> <span>단호박 샐러드, 포케볼, 그릭 샐러드, 연어포케, 치킨 샐러드, 잎채소 샐러드, 닭가슴살 샐러드, 구운 채소 샐러드</span></li>
-                            <li><span class="bullet">·</span> <strong>고단백</strong> <span>생선회, 삶은 달걀, 연어덮밥, 두부 스테이크, 흰살생선 구이, 구운 닭가슴살</span></li>
-                            <li><span class="bullet">·</span> <strong>저칼로리 면</strong> <span>메밀소바, 곤약 비빔면, 두부면 요리, 현미국수, 곤약국수, 샤브샤브, 쌀국수</span></li>
-                            <li><span class="bullet">·</span> <strong>한식</strong> <span>콩나물국밥, 미역국, 두부 부침, 보쌈, 생선구이, 나물 무침, 두부조림, 나물비빔밥</span></li>
-                            <li><span class="bullet">·</span> <strong>수프·국물</strong> <span>맑은 북엇국, 닭가슴살 수프, 맑은 미역국, 미소된장국, 채소 스프, 채소 위주의 맑은 샤브샤브, 토마토 스프, 해조류국</span></li>
+                            <li><span class="bullet">·</span> <strong>샐러드</strong> <span>단호박 샐러드, 포케볼, 그릭 샐러드, 연어포케, 치킨
+                                    샐러드, 잎채소 샐러드, 닭가슴살 샐러드, 구운 채소 샐러드</span></li>
+                            <li><span class="bullet">·</span> <strong>고단백</strong> <span>생선회, 삶은 달걀, 연어덮밥, 두부 스테이크, 흰살생선
+                                    구이, 구운 닭가슴살</span></li>
+                            <li><span class="bullet">·</span> <strong>저칼로리 면</strong> <span>메밀소바, 곤약 비빔면, 두부면 요리, 현미국수,
+                                    곤약국수, 샤브샤브, 쌀국수</span></li>
+                            <li><span class="bullet">·</span> <strong>한식</strong> <span>콩나물국밥, 미역국, 두부 부침, 보쌈, 생선구이, 나물
+                                    무침, 두부조림, 나물비빔밥</span></li>
+                            <li><span class="bullet">·</span> <strong>수프·국물</strong> <span>맑은 북엇국, 닭가슴살 수프, 맑은 미역국,
+                                    미소된장국, 채소 스프, 채소 위주의 맑은 샤브샤브, 토마토 스프, 해조류국</span></li>
                         </ul>
                     </div>
 
@@ -312,4 +358,5 @@
 
     <script type="module" src="js/app.js?v=2"></script>
 </body>
+
 </html>
